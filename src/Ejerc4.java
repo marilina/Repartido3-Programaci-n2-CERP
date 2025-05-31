@@ -4,22 +4,29 @@
 //               [5, 3, 2]           Suma fila 2: 10
 //               [6, 7, 1]           Suma fila 3: 14
 
+import java.util.Arrays;
+import java.util.Random;
 
 public class Ejerc4 {
     public static void main(String[] args){
-        int [][] num = new int[3][3];
-        System.out.println("Matriz: ");
-        for (int i=0; i< num.length; i++) {
-            for (int j=0; j<num[0].length; j++) {
-                num[i][j]=(int) (Math.random()*10);
-                System.out.print(num[i][j]+" - ");
-            }
-            System.out.println();
+        int[][] matriz = {
+                {2, 4, 1},
+                {5, 3, 2},
+                {6, 7, 1},
+        };
 
+        System.out.println("Matriz: ");
+        for (int i=0; i<3; i++) {
+            System.out.println(Arrays.toString(matriz[i]));
+            }
+
+        for (int i=0; i<3; i++){
+            int suma = 0;
+            for(int j=0; j<3; j++){
+                suma = matriz[i][j] + suma;
+            }
+            System.out.println("La suma de la fila " + (i+1) + ": " + suma);
         }
-        System.out.print(" - ".repeat(20));
-        System.out.println("\nSuma fila 1: "+(num[0][0]+num[0][1]+num[0][2]));
-        System.out.println("Suma fila 2: "+(num[1][0]+num[1][1]+num[1][2]));
-        System.out.println("Suma fila 3: "+(num[2][0]+num[2][1]+num[2][2]));
     }
 }
+
